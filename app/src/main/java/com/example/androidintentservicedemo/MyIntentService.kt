@@ -1,6 +1,6 @@
 package com.example.androidintentservicedemo
 
-import android.R
+import android.R.drawable.stat_sys_headset
 import android.app.IntentService
 import android.app.Notification
 import android.app.NotificationManager
@@ -8,9 +8,9 @@ import android.content.Intent
 import androidx.core.app.NotificationCompat
 import java.util.concurrent.TimeUnit
 
-
 class MyIntentService(name: String = "") : IntentService(name) {
 
+    @Deprecated("Deprecated in Java")
     override fun onHandleIntent(intent: Intent?) {
 
         val bundle = intent?.getBundleExtra("bundle")
@@ -29,7 +29,7 @@ class MyIntentService(name: String = "") : IntentService(name) {
             .setContentTitle(msg)
             .setContentText(msg)
             .setTicker(msg)
-            .setSmallIcon(R.drawable.stat_sys_headset)
+            .setSmallIcon(stat_sys_headset)
             .build()
 
         val notificationManager =
